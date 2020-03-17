@@ -347,7 +347,7 @@ function generateHourGrids(rangeMinX,rangeMaxX,n=1) {
   let t = rangeMinX-rangeMinX%interval;
   while (t < rangeMaxX) {
     if (t >= rangeMinX) {
-      if (moment(t).isDST) {
+      if (moment(t).isDST()) {
         ret.push(t - 60*60*1000);
       } else {
         ret.push(t);
