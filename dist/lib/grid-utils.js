@@ -6,6 +6,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.generateGrids = generateGrids;
 exports.generateDateGrids = generateDateGrids;
 
+var _moment = _interopRequireDefault(require("moment"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function generateGrids(minX, maxX, rangeMinX, rangeMaxX) {
   var grids = [];
   var validFromDiff, validToDiff;
@@ -346,7 +350,11 @@ function generateHourGrids(rangeMinX, rangeMaxX) {
 
   while (t < rangeMaxX) {
     if (t >= rangeMinX) {
-      ret.push(t);
+      if ((0, _moment.default)(t).isDST()) {
+        ret.push(t - 60 * 60 * 1000);
+      } else {
+        ret.push(t);
+      }
     }
 
     t += interval;
