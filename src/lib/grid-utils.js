@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export function generateGrids(minX,maxX,rangeMinX,rangeMaxX) {
   let grids=[];
   let validFromDiff,validToDiff;
@@ -345,7 +347,11 @@ function generateHourGrids(rangeMinX,rangeMaxX,n=1) {
   let t = rangeMinX-rangeMinX%interval;
   while (t < rangeMaxX) {
     if (t >= rangeMinX) {
-      ret.push(t);
+      if (moment(t).isDST) {
+        ret.push(t - 60*60*1000);
+      } else {
+        ret.push(t);
+      }
     }
     t+=interval;
   }

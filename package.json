@@ -6,7 +6,8 @@
   "author": "Lingyu Zhou (zhoulytwin@gmail.com)",
   "license": "GPL-3.0",
   "dependencies": {
-    "bisect": "github:zhoulytwinyu/bisect-js#v0.1.0"
+    "bisect": "github:zhoulytwinyu/bisect-js#v0.1.0",
+    "moment": "^2.24.0"
   },
   "scripts": {
     "dist": "export NODE_ENV=production && rm -rf dist && mkdir dist && npx babel src --out-dir dist --copy-files"
@@ -25,7 +26,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5"
   },
