@@ -1,4 +1,21 @@
 # plot-utils
+
+## update
+forked from [zhoulytwinyu/plot-utils](https://github.com/zhoulytwinyu/plot-utils). updated for daylight saving days hours display.
+
+
+for `EDT` timezone,
+
+before:
+
+---8:00---20:00---8:00---20:00---
+
+after:
+
+---7:00---19:00---7:00---19:00---
+
+
+# origin readme
 This library is designed to plots easy. It isolate some of the core functions of plotting, such as coordinate transformation, grid generation etc.
 Fair warning, it is my personal attempt for my personal convinience. It is not likely to stabilize. I myself is learning as I go.
 
